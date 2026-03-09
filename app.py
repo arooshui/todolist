@@ -8,7 +8,7 @@ tasks = []
 def home():
     return "Flask CI/CD ToDo API"
 
-@app.route("/tasks", methods=["GT"])
+@app.route("/tasks", methods=["GET"])
 def get_tasks():
     return jsonify(tasks)
 
