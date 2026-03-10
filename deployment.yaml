@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todolist-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: todolist
+
+  template:
+    metadata:
+      labels:
+        app: todolist
+
+    spec:
+      containers:
+      - name: todolist-container
+        image: arooshz9/todolist:latest
+        ports:
+        - containerPort: 5000
